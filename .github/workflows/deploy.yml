@@ -19,8 +19,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd fastapi-book-project
-            git stash
-            git pull origin main
+            git fetch --prune
+            git reset --hard origin/main
             docker-compose down || true
             docker-compose up -d --build
             docker ps

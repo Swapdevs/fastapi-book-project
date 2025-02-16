@@ -47,7 +47,7 @@ jobs:
           HOST: ${{ secrets.SSH_HOST }}
           USER: ${{ secrets.SSH_USER }}
         run: |
-          ssh -o StrictHostKeyChecking=no "$SSH_USER@$SSH_HOST" << EOF
+          ssh -o StrictHostKeyChecking=no "$USER@$HOST" << EOF
             cd fastapi-book-project
             git pull origin main
             docker-compose down
